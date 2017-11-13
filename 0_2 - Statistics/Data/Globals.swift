@@ -1,9 +1,6 @@
 /************************************************************************************************************************************/
 /** @file		Globals.swift
- *	@project    0_0 - Empty Template (Swift)
- *
- * 	@author		Justin Reina, Firmware Engineer, Jaostech
- * 	@created	4/3/16
+ *	@project    0_2 - Statistics
  *
  * 	@section	Opens
  * 			none current

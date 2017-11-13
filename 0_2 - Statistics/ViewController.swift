@@ -1,11 +1,11 @@
 /************************************************************************************************************************************/
 /** @file		ViewController.swift
- *  @project    0_0 - Empty Template (Swift)
+ *  @project    0_2 - Statistics
  * 	@brief		x
  * 	@details	x
  *
  * 	@author		Justin Reina, Firmware Engineer, Jaostech
- * 	@created	11/12/15
+ * 	@created	11/13/17
  * 	@last rev	x
  *
  *

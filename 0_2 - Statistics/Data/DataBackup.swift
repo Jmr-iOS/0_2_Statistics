@@ -1,13 +1,8 @@
 /************************************************************************************************************************************/
 /** @file		DataBackup.swift
- *	@project    0_0 - Empty Template (Swift)
+ *	@project    0_2 - Statistics
  * 	@brief		x
  * 	@details	x
- *
- * 	@author		Justin Reina, Firmware Engineer, Jaostech
- * 	@created	4/3/16
- * 	@last rev	x
- *
  *
  * 	@notes		x
  *

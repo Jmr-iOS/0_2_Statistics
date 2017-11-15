@@ -23,99 +23,97 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var battLabel : UILabel!;
     
     override func viewDidLoad() {
         super.viewDidLoad();
         
         self.view.translatesAutoresizingMaskIntoConstraints = false;
-
-        optDemo_addButton(self.view);
-        makeAMonsterousLabel(self.view);
         
+        //Add Battery Label
+        self.addBattLabel();
+
         print("ViewController.viewDidLoad():       viewDidLoad() complete");
         
         //listen to 'Home' press
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)),
-                                                         name: NSNotification.Name.UIApplicationWillResignActive,
-                                                         object: nil);
+                                               selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)),
+                                               name: NSNotification.Name.UIApplicationWillResignActive,
+                                               object: nil);
+        return;
+    }
     
+    
+    /********************************************************************************************************************************/
+    /** @fcn        func addBattLabel()
+     *  @brief      gen the new label to print the battery level
+     *  @details    x
+     *
+     *  @post        battLabel init & displayed
+     */
+    /********************************************************************************************************************************/
+    func addBattLabel() {
+        
+        //init label
+        battLabel = UILabel();
+        
+        //set params
+        battLabel.text          = "%";
+        battLabel.font          = UIFont(name: "Arial", size: 15);
+        battLabel.textColor     = UIColor.black;
+        battLabel.textAlignment = .left;
+        
+        //formatting
+        battLabel.numberOfLines = 0;
+        battLabel.lineBreakMode = .byWordWrapping;
+        battLabel.frame = CGRect(x: 10, y: 25, width: 300, height: 25);
+        battLabel.backgroundColor = UIColor.white;
+        
+        //display battery level
+        self.updateBattLevel();
+        
+        view.addSubview(battLabel);
+        
+        return;
+    }
+
+    
+    /********************************************************************************************************************************/
+    /** @fcn        func updateBattLevel()
+     *  @brief      write the batter level to the screen (0 - 1)
+     */
+    /********************************************************************************************************************************/
+    func updateBattLevel() {
+        
+        //Read Battery Level
+        let battLvl : Float = BatteryMonitor.getBatteryLevel();            /* promoted at 0-100                                     */
+        let battStr : String = String(format: "Batt: %.2f%%", battLvl);
+        
+        self.writeBattLabel(str: battStr);
+        
         return;
     }
 
 
-    @objc func applicationWillResignActive(_ notification: Notification) {
+    /********************************************************************************************************************************/
+    /** @fcn        func writeBattLabel(String str)
+     *  @brief      write a new value to the battery label
+     */
+    /********************************************************************************************************************************/
+    func writeBattLabel(str : String) {
+        self.battLabel.text = str;
+        return;
+    }
+    
+    
+    func applicationWillResignActive(_ notification: Notification) {
         print("I'm out of focus, home was pressed!");
         return;
     }
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
-
-        return;
-    }
-
-    
-    @objc func optDemo_addButton(_ view:UIView) {
-        
-        let button      : UIButton  = UIButton(type: UIButtonType.system) as UIButton;
-        let buttonWidth : CGFloat   = 300;
-        
-        button.frame = CGRect(x: self.view.center.x-(buttonWidth/2), y: 100, width: buttonWidth, height: 50);
-
-        
-        button.backgroundColor = UIColor.green
-        
-        button.setTitle("Test Button", for: UIControlState());
-  
-        button.addTarget(self, action: #selector(ViewController.myButton_response(_:)), for:  .touchUpInside);
-
-        view.addSubview(button);
-        
-        print("ViewController.optDemo_addButton(): Button added");
-        
-        return;
-    }
-    
-
-    @objc func makeAMonsterousLabel(_ view:UIView) {
-        
-        let myFirstLabel  = UILabel();
-
-        myFirstLabel.text          = "I made a label on the screen #toogood4you";
-        myFirstLabel.font          = UIFont(name: "MarkerFelt-Thin", size: 45);
-        myFirstLabel.textColor     = UIColor.red;
-        myFirstLabel.textAlignment = .center;
-
-        //text-wrap
-        myFirstLabel.numberOfLines = 0;
-        myFirstLabel.lineBreakMode = .byWordWrapping;
-        
-        myFirstLabel.frame = CGRect(x: (self.view.center.x - 150), y: 200, width: 300, height: 500);
-        
-        myFirstLabel.backgroundColor = UIColor.gray;
-        
-        view.addSubview(myFirstLabel);
-
-        return;
-    }
-    
-    
-/*    func pressed(sender: UIButton!) {
-        let alertView = UIAlertView();
-        alertView.addButtonWithTitle("Ok");
-        alertView.title = "title";
-        alertView.message = "message";
-        alertView.show();
-        
-        return;
-    }
-*/
-    
-    @objc func myButton_response(_ sender: UIButton!) {
-
-        print("Button Response fired. Game on!");
         
         return;
     }

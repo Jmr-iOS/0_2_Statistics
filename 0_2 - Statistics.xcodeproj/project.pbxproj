@@ -16,6 +16,7 @@
 		D0BFEEEE1FBA4EDF0067ECC6 /* DataBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFEEEC1FBA4EDF0067ECC6 /* DataBackup.swift */; };
 		D0BFEEEF1FBA4EDF0067ECC6 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFEEED1FBA4EDF0067ECC6 /* Globals.swift */; };
 		D0BFEEF11FBA55000067ECC6 /* BatteryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFEEF01FBA55000067ECC6 /* BatteryMonitor.swift */; };
+		D0EEA44F1FBBC83300DC5F12 /* ActivityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EEA44E1FBBC83300DC5F12 /* ActivityMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D0BFEEEC1FBA4EDF0067ECC6 /* DataBackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataBackup.swift; path = "0_2 - Statistics/Data/DataBackup.swift"; sourceTree = "<group>"; };
 		D0BFEEED1FBA4EDF0067ECC6 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Globals.swift; path = "0_2 - Statistics/Data/Globals.swift"; sourceTree = "<group>"; };
 		D0BFEEF01FBA55000067ECC6 /* BatteryMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryMonitor.swift; sourceTree = "<group>"; };
+		D0EEA44E1FBBC83300DC5F12 /* ActivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				D039B4B91BF4D7950024005F /* AppDelegate.swift */,
 				D039B4BB1BF4D7950024005F /* ViewController.swift */,
 				D0BFEEF01FBA55000067ECC6 /* BatteryMonitor.swift */,
+				D0EEA44E1FBBC83300DC5F12 /* ActivityMonitor.swift */,
 			);
 			path = "0_2 - Statistics";
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				D0BFEEEE1FBA4EDF0067ECC6 /* DataBackup.swift in Sources */,
 				D0BFEEF11FBA55000067ECC6 /* BatteryMonitor.swift in Sources */,
 				D039B4BA1BF4D7950024005F /* AppDelegate.swift in Sources */,
+				D0EEA44F1FBBC83300DC5F12 /* ActivityMonitor.swift in Sources */,
 				D0BFEEEF1FBA4EDF0067ECC6 /* Globals.swift in Sources */,
 				D0BFEEE81FBA4ED50067ECC6 /* Stdcomments.swift in Sources */,
 			);

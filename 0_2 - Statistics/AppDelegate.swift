@@ -21,7 +21,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?;
-
+    
+    var viewController:ViewController!;
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -29,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.backgroundColor = UIColor.white;
         
-        let viewController:ViewController = ViewController();
+        self.viewController = ViewController();
         
-        viewController.view.translatesAutoresizingMaskIntoConstraints = false;
+        self.viewController.view.translatesAutoresizingMaskIntoConstraints = false;
         
         self.window?.rootViewController = viewController;
         
@@ -41,11 +42,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true;
     }
-
-    func applicationWillResignActive(_ application: UIApplication)    { return; }
-    func applicationDidEnterBackground(_ application: UIApplication)  { return; }
-    func applicationWillEnterForeground(_ application: UIApplication) { return; }
-    func applicationDidBecomeActive(_ application: UIApplication)     { return; }
-    func applicationWillTerminate(_ application: UIApplication)       { return; }
+    
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        self.viewController.incrementDemoLabel(lineNum:1);
+        print("A");
+        return;
+    }
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        self.viewController.incrementDemoLabel(lineNum:2);
+        print("B");
+        return;
+    }
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        self.viewController.incrementDemoLabel(lineNum:3);
+        print("C");
+        return;
+    }
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        self.viewController.incrementDemoLabel(lineNum:4);
+        print("D");
+        return;
+    }
+    func applicationWillTerminate(_ application: UIApplication) {
+        self.viewController.incrementDemoLabel(lineNum:5);
+        print("E");
+        return;
+    }
 }
 
